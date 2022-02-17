@@ -1,6 +1,6 @@
 
-drinks = [{"id": "water", "name": "Water", "price": 1}]
-drinkStock = {"water": "infinite"}
+drinks = [{"id": "water", "name": "Water", "price": 1},{"id": "coke", "name": "Coke", "price": 99.95}]
+drinkStock = {"water": "infinite", "coke": 1}
 acceptedMoney = [0.10, 0.20, 0.50, 1, 2]
 # States
 # * waitsForUserInput
@@ -17,7 +17,10 @@ money = 10
 chosenDrink = ""
 moneyGiven = 0
 
+print("Welcome to the vending machine!\n")
+
 while True:
+    print("")
     if state == "waitsForUserInput":
         drinksOption= ", ".join([drink["name"]+" $"+str(drink["price"]) for drink in drinks])
         chosenDrink = input(f"Choose drink ({drinksOption}): ")
@@ -43,13 +46,13 @@ while True:
             moneyGivenInput = (float(moneyGivenInput))
         except:
             moneyGivenInput = 0
-        if moneyGivenInput not in acceptedMoney:
-            print("Not a valid money")
-            state = "waitsForMoney"
-            continue
-        elif moneyGiven > money:
+        if moneyGiven > money:
             print("You don't have that money")
             # money -= moneyGiven
+            continue
+        elif moneyGivenInput not in acceptedMoney:
+            print("Not a valid money")
+            state = "waitsForMoney"
             continue
         elif moneyGiven+moneyGivenInput == chosenDrink['price']:
             money -= moneyGiven
