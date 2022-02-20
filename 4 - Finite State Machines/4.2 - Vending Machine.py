@@ -4,10 +4,7 @@ drinkStock = {"water": "infinite", "coke": 1}
 acceptedMoney = [0.10, 0.20, 0.50, 1, 2]
 # States
 # * waitsForUserInput
-#? * inputNotValid
 # * waitsForMoney
-#? * notEnoughMoney
-#? * moreMoneyGiven
 # * givesItem
 
 state = "waitsForUserInput"

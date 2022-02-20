@@ -4,7 +4,7 @@ from typing import Literal
 # set initial state 
 # door is closed 
 door: Literal["open" , "closed"] 
-position :Literal["opening", "closing", "stopped", "" ]
+position: Literal["opening", "closing", "stopped", "" ]
 door = "closed" 
 position = ""
 print("Door is", door) 
@@ -38,72 +38,26 @@ while True:
 
     if position == "closing":
         # wait 5 seconds then transition to closed state
-        time.sleep(1)
-        instruction = input(". ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input(".. ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input("... ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input(".... ") 
-        if instruction == "s" and position == "opening": 
-            door = "open"
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input("..... ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
+        for i in range(5):
+            time.sleep(1)
+            instruction = input(f"{'.'*i} ") 
+            if instruction == "s" : 
+                door = "open" 
+                print("Canceled")
+                continue
         
         door = "closed"
         position = ""
     elif position == "opening":
         # wait 5 seconds then transition to open state
-        time.sleep(1)
-        instruction = input(". ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input(".. ") 
-        if instruction == "s" and position == "opening": 
-            door = "open"
-            print("Cancled") 
-            continue
-        time.sleep(1)
-        instruction = input("... ")
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input(".... ") 
-        if instruction == "s" and position == "opening": 
-            door = "open" 
-            print("Cancled")
-            continue
-        time.sleep(1)
-        instruction = input("..... ") 
-        if instruction == "s" and position == "opening": 
-            door = "open"
-            print("Cancled")
-            continue
-        
+        for i in range(5):
+            time.sleep(1)
+            instruction = input(f"{'.'*i} ") 
+            if instruction == "s": 
+                door = "closed" 
+                print("Cancled")
+                continue
+  
         door = "open"
         position = ""
     
