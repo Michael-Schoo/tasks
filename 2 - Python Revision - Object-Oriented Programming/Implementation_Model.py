@@ -1,5 +1,13 @@
 from time import sleep
 
+# https://runestone.academy/ns/books/published/pythonds/Introduction/ObjectOrientedProgramminginPythonDefiningClasses.html#inheritance-logic-gates-and-circuits
+"""
+Changes to the original code:
+ * Removed connectors and replaced them with passing the inputs into the class instead (implicit     connection)
+ * Changed some of the wording of functions - separated some `performGateLogic()` into `calculate()`
+ * ... (more)
+"""
+
 clock = 0
 flip_flop_data: list[list[bool]] = []
 
@@ -142,7 +150,7 @@ class JKFlipFlop(LogicGate):
 
 # A special type to resolve before definement problems
 class JKFlipFlopReceiver(LogicGate):
-    def __init__(self, id) -> None:
+    def __init__(self, id: int) -> None:
         super().__init__()
         self.id = id
     
@@ -150,6 +158,7 @@ class JKFlipFlopReceiver(LogicGate):
         return flip_flop_data[self.id][clock - 1]
 
 def main():
+    print("Use 1 and 0 for the button press\n")
     switch = SWITCH(AlwaysON(), True)
     ffaand = ANDGate(switch, JKFlipFlopReceiver(1))
     ffa = JKFlipFlop(ffaand, NOTGate(switch), 0)
@@ -164,29 +173,20 @@ def main():
     y = PRINTER(yand)
 
     global clock
-    for i in range(1, 3):
-        print(i)
-        clock = i
-        
-        print("A:", flip_flop_data[0][i-1])
-        print("B:", flip_flop_data[1][i-1])
-        print("=Y:", y.execute())
+    i = 0
+    while True:
+        button = input("Button pressed? ")
+        if not button.isdigit(): 
+            print("Error, try again...\n")
+            if "exit" in button.lower(): break
+            continue
+        switch.cond = bool(int(button))
+        i += 1; clock = i
+        print("Pulse sent" if y.execute() else "No pulse")
         print()
         sleep(0.1)
 
-    switch.toggle()
-    print("Toggled Switch!\n\n")
-    for i in range(8, 14):
-        clock = i
-
-        yTmp=y.execute()
-        print("A:", flip_flop_data[0][i])
-        print("B:", flip_flop_data[1][i])
-        print("Y:", yTmp)
-        print()
-
-
-# main()
+main()
 
 tests = [
     ((0, 0, 0), (0, 0, 0)),
@@ -230,6 +230,6 @@ def test():
         assert next[0] == flip_flop_data[0][1]
         assert next[1] == flip_flop_data[1][1]
 
-    print("Tests successful")
+    print("Tests finished")
 
-test()
+# test()
