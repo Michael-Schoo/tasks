@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon">
+    <script src="./script.js"></script>
+    <style>
+      body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      a {
+        color: #FF0000;
+      }
+    </style>
+    <title>Basic Website</title>
+  </head>
+
+  <body>
+
+    <div id="flexbox"> <a href="./signup.html">Sign Up</a> | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        title="Vid about you">Video</a></div>
+    <div id="heddings">
+      <h1>Why you want to sign up</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus tellus, ullamcorper sit amet faucibus vitae,
+        suscipit eget est. Proin rhoncus dolor quis orci interdum pharetra. Vestibulum ante ipsum primis in faucibus
+        orci luctus
+        et ultrices posuere cubilia curae; Nulla aliquam at lacus a viverra. Duis porttitor auctor quam sit amet
+        elementum.
+        Mauris metus massa, accumsan eget iaculis vitae, auctor accumsan mi. Mauris porttitor accumsan nisl, sit amet
+        tempus
+        massa fringilla quis. Sed porttitor, nulla non molestie dignissim, diam elit fringilla diam, vel consectetur
+        ante orci
+        eget ante. Curabitur fringilla nisi vel enim commodo, in ornare turpis bibendum. In scelerisque sagittis lacus,
+        id
+        convallis eros aliquam nec.
+
+      </p>
+      <h2>I'm still not convinced</h2>
+      <p>
+        Nulla dolor ligula, sollicitudin faucibus aliquet ac, gravida sed mauris. Integer commodo mauris est, et
+        malesuada magna
+        iaculis at. Pellentesque eu eleifend lacus, quis sodales leo. Quisque euismod orci risus, vitae tincidunt metus
+        porttitor venenatis. Integer molestie nisi a eros vehicula, ac lacinia tellus euismod. In sollicitudin nec
+        libero ut
+        congue. Cras ac felis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.
+        Suspendisse
+        aliquet, augue ut placerat tristique, magna tortor consequat dolor, ac sodales purus orci quis leo. Nunc at
+        lectus enim.
+        Cras interdum purus eu mauris vestibulum volutpat. Nullam quis risus ligula.
+
+      </p>
+      <h3 style="text-align: right;">But I don't want to</h3>
+      <p>
+        Mauris rutrum, ante nec convallis congue, felis ante vehicula est, ac gravida ligula ligula eget lorem. Nulla
+        facilisi.
+        Aenean lobortis leo vel lacinia rhoncus. Aenean sit amet diam euismod, porta tortor eget, posuere ante. Nunc
+        placerat
+        justo eget nulla laoreet, ac volutpat nisl fringilla. Aliquam laoreet ut diam ut auctor. Curabitur id magna
+        commodo,
+        ornare magna a, iaculis ex. Etiam at erat id urna pharetra pulvinar quis at purus. Integer non tempor dui, ut
+        consequat
+        urna. Nullam imperdiet sodales velit, ornare eleifend nunc efficitur vitae. Aenean nec elit venenatis, vehicula
+        diam
+        vitae, eleifend dolor. Proin hendrerit commodo lorem iaculis auctor. Maecenas vel diam mattis est aliquet
+        ultrices.
+
+      </p>
+      <h4>Actually that sounds smart</h4>
+      <p style="font-family: monospace;">
+        Mauris porttitor et elit nec malesuada. Nam eu nisl eu metus vestibulum convallis ac non metus. Donec in
+        dignissim nibh,
+        nec convallis diam. Vestibulum porta venenatis risus nec tincidunt. Etiam mollis pharetra dui. Cras malesuada
+        est at
+        velit dapibus faucibus. Sed sit amet auctor justo, et finibus augue. Curabitur massa magna, hendrerit quis
+        consectetur
+        in, tempus eu dui. Donec laoreet felis non turpis porta, sit amet fermentum felis pellentesque.
+
+      </p>
+      <h5>BEEE</h5>
+      <iframe src="./beemovie.html"></iframe>
+
+
+    </div>
+    <button onclick="showForm()">...</button>
+    <form id="form" action="https://google.com/search" method="get">
+      <header>
+        <h1>SIGN-UP</h1>
+      </header></br>
+      <a href="./signup.html">Use THIS page to sign up</a></br>
+      <label for="name">Name:</label>
+      <input type="text" name="q" id="name" required placeholder="Jon (3 char)" pattern="[A-Za-z]{3}">
+      <label for="email">Email:</label>
+      <input type="tel" name="Your Phone number" id="ph"></br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required placeholder="(16 char)" pattern="[A-Za-z0-9]{16}">
+      <label for="password">Confirm Password:</label>
+      <input type="password" name="password" id="password" required placeholder="(8 char)" pattern="[A-Za-z0-9]{8}"></br>
+      <label for="why">INPUT</label></br>
+      <textarea id="why" style="width: 100%"></textarea></br>
+      <button type="submit">Submit</button></br>
+    </form>
+    <footer style="">
+      <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        li {
+          float: left;
+        }
+
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+          background-color: #111;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+          background-color: red;
+        }
+
+        li.dropdown {
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+      </style>
+      </br></br></br>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="https://news.google.com">News</a></li>
+        <li><a href="https://gmail.com">Contact</a></li>
+        <li><a href="https://google.com/search?q=School">About</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+          <div class="dropdown-content" style="top: 60%">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </footer>
+
+  </body>
+
+</html>

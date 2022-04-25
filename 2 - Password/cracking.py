@@ -113,12 +113,12 @@ def main():
 
             if resp == "Correct":
                 return True
-main()
+# main()
 
 
 def mainWithInput():
     with open(words_loc) as words:  # point this to your words file
-        wordsList = [word for word in list(words) if word.__len__() == 5]
+        wordsList = [word for word in list(words) if word.__len__() == 6]
         print(f"possible options: {len(wordsList)} (for 5 char word)")
         global password 
         password = random.choice(wordsList)

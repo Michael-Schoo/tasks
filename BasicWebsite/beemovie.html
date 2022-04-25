@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://google.com/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <!-- <script src="./script.js"></script> -->
+        <title>Bee movie - Basic Website</title>
+        <style>
+             @font-face { font-family: HoneycombHappiness; src: url('HoneycombHappiness-ywnRm.woff2'); } 
+      body {
+         font-family: HoneycombHappiness
+      }
+
+
+        </style>
+        <script>
+            function wait(ms) {
+                var start = new Date().getTime();
+                var end = start;
+                while (end < start + ms) {
+                    end = new Date().getTime();
+                }
+            }
+        </script>
+    </head>
+
+    <body style="background-color: black;">
+        <div id="script" style="">
+            <p id="before" style="padding-left: 10px; color: yellow;">_</p>
+            <p id="before2"style="padding-left: 10px; color: yellow">_</p>
+            <strong><p id="current" style="padding-left: 10px; background-color: yellow; color: black;">_</p></strong>
+            <!-- <p id="after">_</p> -->
+        </div>
+        <!-- <embed src="./gistfile1.txt"> -->
+        <script defer async type="module">
+                let resp = await fetch("./gistfile1.txt")
+                let text =  await resp.text()
+                console.log(text);
+                const arr = text.toString().replace(/\r\n/g, '\n').split('\n');
+                let i = 0
+                var elementB = await document.getElementById("before")
+                var elementB2 = await document.getElementById("before2")
+                var elementC = await document.getElementById("current")
+                
+                let interv = setInterval( ()=>{
+                        elementB.textContent = arr[i-2] || "‎";
+                        elementB2.textContent = arr[i-1] || "‎";
+                        elementC.textContent = arr[i] || "‎";
+                        i++
+                        if (i >= arr.length) clearInterval(interv)
+                    }, 750);
+                    
+
+        </script>
+    </body>
+
+</html>

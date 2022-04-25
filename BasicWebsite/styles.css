@@ -1,0 +1,78 @@
+:root {
+    --color: black;
+    --bgColor: white
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: white;
+        --bgColor: black
+    }
+    form input{
+        color: green;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color: black;
+        --bgColor: white
+    }
+}
+
+/* @media print */
+@media print {
+    :root {
+        --color: green;
+        --bgColor: orange
+    }
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--color);
+}
+
+
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: left;
+}
+
+
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#form{
+    display: none;
+}
+form{
+    display: flex;
+    flex-direction: none;
+    justify-content: none;
+    align-items: none;
+    
+}
+
+form input{
+    /* height: 50px; */
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    /* font-size: 1.5em; */
+    font-weight: bold;
+}
+
