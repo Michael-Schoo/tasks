@@ -47,7 +47,7 @@ jobs:
           python-version: 3
       - uses: marian-code/python-lint-annotate@v3
         with:
-          python-root-list: "./tests/*.py"
+          # python-root-list: "./tests/*.py"
           use-black: true
           use-isort: true
           use-mypy: true
