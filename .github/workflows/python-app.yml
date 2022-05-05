@@ -13,8 +13,8 @@ permissions:
   contents: read
 
 jobs:
-  pytest:
-    name: Pytest
+  test:
+    name: Python Testing
     runs-on: ubuntu-latest
 
     steps:
@@ -37,23 +37,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-  lint:
-      name: Lint Python
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3
-      - uses: marian-code/python-lint-annotate@v3
-        with:
-          # python-root-list: "./tests/*.py"
-          use-black: true
-          use-isort: true
-          use-mypy: true
-          use-pycodestyle: true
-          use-pydocstyle: true
-          extra-pycodestyle-options: "--max-line-length=88"
-          use-pylint: true
-          use-flake8: true
-          use-vulture: true
