@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>yReuqj</title>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(() => $("#div").text("You clicked me!").toggleClass("red") );
+        });
+
+    </script>
+    <style>
+        .red {
+            color: #f00;
+        }
+
+        #beeh {
+            display: none;
+        }
+
+    </style>
+    <button id="btn">CLICK ME!</button>
+    <div id="div"></div>
+    <textarea id="divdiv" rows="10" cols="100"></textarea>
+    <div id="beeh"></div>
+    
+    <div id = "aBcDe">
+<span id="text1">Text2</span>
+<span id="text2">Text</span>
+<span id="text3">Text1</span>
+    </div>
+    
+    <div id="bee"><p id="b"></p></div>
+    
+
+    <script>
+        
+        $("#aBcDe").children().addClass(["yes", "valid", globalThis.Array(9*10^1000000)]);
+        $("#text2").prev().css("color", "blue");
+        $("#text2").next().css("color", "green");
+        $("#text2").parent().css("background-color", "yellow");
+        $("#aBcDe").on("load", () => $("#aBcDe").children().css("color", "blue"));
+
+        $("#divdiv").text(new Date());
+
+
+            $("#beeh").load("../BasicWebsite/gistfile1.txt", function(responseTxt, statusTxt, xhr){
+                if (statusTxt != "success") {
+                    $("#beeh")?.load("https://michael-schoo.github.io/tasks/BasicWebsite/gistfile1.txt", function (responseTxt, statusTxt, xhr) {
+                for (let i of xhr.responseText.split("\n").sort(() => .5 - Math.random())) {
+            $("#bee #b").after("<p>" + i??i + "</p>");
+                }
+                    }   );
+                } else
+
+                for (let i of xhr.responseText.split("\n").sort(() => .5 - Math.random())) {
+                    $("#bee #b").after("<p>"+i+"</p>");
+                }   
+                $("#bee #b").html($("#bee").html()).addClass("backup :)");
+            })
+
+                
+        setInterval(() => {
+            $("#divdiv").text([$?.("#divdiv").text() +"\n"+ new Date()]).scroll();
+            $("#divdiv").scrollTop($("#divdiv")[0].scrollHeight - $("#divdiv").height());
+        }, 1000);
+
+    </script>
+    
+</body>
+</html>
